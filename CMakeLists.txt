@@ -23,6 +23,7 @@ add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 find_package(wxWidgets REQUIRED COMPONENTS net core base)
 include(${wxWidgets_USE_FILE})
 add_subdirectory(extern/lua-5.1.5)
+add_subdirectory(extern/sqlite3)
 
 
 IF (WIN32)
@@ -33,3 +34,4 @@ ENDIF()
 
 target_link_libraries(${PROJECT_NAME} ${wxWidgets_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} lua51)
+target_link_libraries(${PROJECT_NAME} sqlite3)
