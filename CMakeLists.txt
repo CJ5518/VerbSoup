@@ -8,6 +8,8 @@ set(VERB_SOUP_SOURCE
 )
 
 set(VERB_SOUP_HEADERS
+	include/sol.hpp
+	include/VerbEntry.hpp
 )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
@@ -15,6 +17,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 if (BUILD_SHARED_LIBS)
 	set(SFML_STATIC_LIBRARIES TRUE)
 endif()
+
+#Sol2 makes us of c++17
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 
 #_CRT_SECURE_NO_WARNINGS
@@ -35,3 +41,5 @@ ENDIF()
 target_link_libraries(${PROJECT_NAME} ${wxWidgets_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} lua51)
 target_link_libraries(${PROJECT_NAME} sqlite3)
+
+target_include_directories(${PROJECT_NAME} PUBLIC "include")

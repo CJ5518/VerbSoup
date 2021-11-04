@@ -6,6 +6,8 @@
 #include <wx/wx.h>
 #include <wx/notebook.h>
 
+#include <sol/sol.hpp>
+
 class MyApp: public wxApp {
 public:
 	virtual bool OnInit();
@@ -13,7 +15,6 @@ public:
 
 class MyFrame: public wxFrame {
 public:
-	wxNotebook* m_notebook;
 	MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size);
 
 private:
@@ -34,6 +35,8 @@ wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
 	EVT_MENU(wxID_EXIT,  MyFrame::OnExit)
 	EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
 wxEND_EVENT_TABLE()
+
+//Implementations for the above classes
 
 wxIMPLEMENT_APP(MyApp);
 bool MyApp::OnInit() {
@@ -58,8 +61,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 	SetMenuBar( menuBar );
 	CreateStatusBar();
 	SetStatusText( "Welcome to wxWidgets!" );
-	m_notebook = new wxNotebook(this, 111);
-	
+
 }
 
 void MyFrame::OnExit(wxCommandEvent& event) {
