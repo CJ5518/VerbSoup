@@ -5,10 +5,13 @@ project(VerbSoup)
 
 set(VERB_SOUP_SOURCE
 	src/main.cpp
+	src/VerbEntry.cpp
 )
 
 set(VERB_SOUP_HEADERS
-	include/sol.hpp
+	include/sol/sol.hpp
+	include/sol/config.hpp
+	include/sol/forward.hpp
 	include/VerbEntry.hpp
 )
 

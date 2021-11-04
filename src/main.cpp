@@ -8,6 +8,8 @@
 
 #include <sol/sol.hpp>
 
+#include "VerbEntry.hpp"
+
 class MyApp: public wxApp {
 public:
 	virtual bool OnInit();
@@ -42,6 +44,8 @@ wxIMPLEMENT_APP(MyApp);
 bool MyApp::OnInit() {
 	MyFrame *frame = new MyFrame( "Hello World", wxPoint(50, 50), wxSize(450, 340) );
 	frame->Show( true );
+	VerbEntry* verbEntry = new VerbEntry();
+	//verbEntry->Show();
 	return true;
 }
 
