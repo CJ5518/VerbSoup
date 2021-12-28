@@ -6,11 +6,11 @@
 #include <sol/sol.hpp>
 #include "ConjugationEntry.hpp"
 
-class VerbEntry : public wxDialog {
+class VerbEntry : public wxPanel {
 public:
-	VerbEntry();
-	//VerbEntry(sol::lua_table verbTenses);
+	VerbEntry(wxWindow* parent);
 private:
+	wxPanel* panel;
 	wxNotebook* notebook;
 	ConjugationEntry** conjugationEntries;
 

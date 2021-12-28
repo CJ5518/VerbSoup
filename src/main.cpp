@@ -18,6 +18,7 @@ public:
 class MyFrame: public wxFrame {
 public:
 	MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size);
+	VerbEntry* verbEntry;
 
 private:
 	void OnHello(wxCommandEvent& event);
@@ -44,8 +45,6 @@ wxIMPLEMENT_APP(MyApp);
 bool MyApp::OnInit() {
 	MyFrame *frame = new MyFrame( "Hello World", wxPoint(50, 50), wxSize(450, 340) );
 	frame->Show( true );
-	VerbEntry* verbEntry = new VerbEntry();
-	//verbEntry->Show();
 	return true;
 }
 
@@ -65,7 +64,8 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 	SetMenuBar( menuBar );
 	CreateStatusBar();
 	SetStatusText( "Welcome to wxWidgets!" );
-
+	verbEntry = new VerbEntry(this);
+	//this->AddChild(verbEntry);
 }
 
 void MyFrame::OnExit(wxCommandEvent& event) {
@@ -78,5 +78,5 @@ void MyFrame::OnAbout(wxCommandEvent& event) {
 }
 
 void MyFrame::OnHello(wxCommandEvent& event) {
-	wxLogMessage("Hello world from wxWidgets!");
+	
 }
