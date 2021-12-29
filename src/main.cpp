@@ -9,6 +9,7 @@
 #include <sol/sol.hpp>
 
 #include "VerbEntry.hpp"
+#include "VerbEntryDialog.hpp"
 
 class MyApp: public wxApp {
 public:
@@ -62,8 +63,6 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 	menuBar->Append( menuFile, "&File" );
 	menuBar->Append( menuHelp, "&Help" );
 	SetMenuBar( menuBar );
-	CreateStatusBar();
-	SetStatusText( "Welcome to wxWidgets!" );
 	verbEntry = new VerbEntry(this);
 	//this->AddChild(verbEntry);
 }
@@ -78,5 +77,7 @@ void MyFrame::OnAbout(wxCommandEvent& event) {
 }
 
 void MyFrame::OnHello(wxCommandEvent& event) {
-	
+	wxDialog* dialog = new VerbEntryDialog(this);
+	dialog->ShowModal();
+	delete dialog;
 }

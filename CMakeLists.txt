@@ -7,6 +7,7 @@ set(VERB_SOUP_SOURCE
 	src/main.cpp
 	src/VerbEntry.cpp
 	src/ConjugationEntry.cpp
+	src/VerbEntryDialog.cpp
 )
 
 set(VERB_SOUP_HEADERS
@@ -15,6 +16,7 @@ set(VERB_SOUP_HEADERS
 	include/sol/forward.hpp
 	include/VerbEntry.hpp
 	include/ConjugationEntry.hpp
+	include/VerbEntryDialog.hpp
 )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
