@@ -44,8 +44,10 @@ wxEND_EVENT_TABLE()
 
 wxIMPLEMENT_APP(MyApp);
 bool MyApp::OnInit() {
+#ifdef _DEBUG
 	AllocConsole();
-freopen("CONOUT$", "w", stdout);
+	freopen("CONOUT$", "w", stdout);
+#endif
 	MyFrame *frame = new MyFrame( "Hello World", wxPoint(50, 50), wxSize(450, 340) );
 	frame->Show( true );
 	return true;
