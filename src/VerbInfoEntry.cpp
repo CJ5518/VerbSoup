@@ -1,9 +1,9 @@
 #include "VerbInfoEntry.hpp"
 
-VerbInfoEntry::VerbInfoEntry(wxWindow* parent) : wxPanel(parent) { 
+VerbInfoEntry::VerbInfoEntry(wxWindow* parent, VerbInfoEntryType type) : wxPanel(parent) { 
 
 }
 
-VervInfoEntry::~VerbInfoEntry() {
-	
+VerbInfoEntry::~VerbInfoEntry() {
+
 }

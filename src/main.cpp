@@ -44,6 +44,8 @@ wxEND_EVENT_TABLE()
 
 wxIMPLEMENT_APP(MyApp);
 bool MyApp::OnInit() {
+	AllocConsole();
+freopen("CONOUT$", "w", stdout);
 	MyFrame *frame = new MyFrame( "Hello World", wxPoint(50, 50), wxSize(450, 340) );
 	frame->Show( true );
 	return true;
@@ -79,5 +81,6 @@ void MyFrame::OnAbout(wxCommandEvent& event) {
 void MyFrame::OnHello(wxCommandEvent& event) {
 	wxDialog* dialog = new VerbEntryDialog(this);
 	dialog->ShowModal();
+	dialog->Destroy();
 	delete dialog;
 }

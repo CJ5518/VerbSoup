@@ -3,10 +3,15 @@
 
 #include <wx/wx.h>
 
+enum VerbInfoEntryType {
+	FullyEditable,
+	PartiallyEditable,
+	NotEditable
+};
 
 class VerbInfoEntry : public wxPanel {
 public:
-	VerbInfoEntry(wxWindow* parent);
+	VerbInfoEntry(wxWindow* parent, VerbInfoEntryType type);
 	~VerbInfoEntry();
 };
 
