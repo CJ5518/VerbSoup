@@ -15,7 +15,7 @@ VerbEntry::VerbEntry(wxWindow* parent) : wxPanel(parent) {
 	int x,y;
 	parent->GetClientSize(&x,&y);
 	notebook = new wxNotebook(this, 1, wxPoint(0,0), wxSize(x,y));
-	//notebook->AddPage(new VerbInfoEntry(notebook, VerbInfoEntryType::FullyEditable), "Verbe");
+	notebook->AddPage(new VerbInfoEntry(notebook), "Verbe");
 	for (int q = 0; q < sizeof(verbTenses) / sizeof(wxString); q++) {
 		notebook->AddPage(new ConjugationEntry(notebook), verbTenses[q]);
 	}
